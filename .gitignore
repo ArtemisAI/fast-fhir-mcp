@@ -1,6 +1,17 @@
 # Project Documentation (private)
 /docs/
 
+# EMR Project Structure (for staged commits)
+/EMR/Tasks/
+/EMR/instructions/
+/EMR/package-lock.json
+/EMR/node_modules/
+/EMR/.next/
+/EMR/coverage/
+/EMR/.nyc_output
+/EMR/.env*
+!EMR/.env.example
+
 # Environment files
 .env
 .env.local
@@ -82,3 +93,10 @@ Thumbs.db
 /temp/
 /tmp/
 .cache/
+
+# Scripts (local automation)
+# Scripts (allow test files)
+/.scripts/
+!/.scripts/test/
+!/.scripts/test-*.ps1
+!/.scripts/usage.ps1
