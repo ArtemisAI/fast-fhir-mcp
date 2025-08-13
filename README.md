@@ -1,4 +1,9 @@
 # FHIR-MCP Integration Framework
+
+**⚠️ STATUS: Development Paused - Critical Issues**  
+**PROGRESS**: 1/114 EMR files uploaded - PowerShell script syntax errors**  
+**DOCUMENTATION**: See `/issues/` and `PROJECT_HANDOVER.md` for details**  
+
 A comprehensive healthcare integration project transforming a legacy EMR system into a FHIR-compliant platform using the Model Context Protocol (MCP) for AI-powered healthcare workflows.
 
 ## 🏥 Project Overview

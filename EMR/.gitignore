@@ -1,0 +1,59 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+.yarn/install-state.gz
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env*.local
+.env
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Sentry Config File
+.env.sentry-build-plugin
+
+# Project-specific ignores
+/Tasks/
+/instructions/
+*.log
+.vscode/settings.json
+
+# Healthcare/PHI data (never commit patient data)
+/data/
+/patient-data/
+/medical-records/
+/test-data/patients/
+*.phi
+*.patient
+
+# Temporary files
+/temp/
+/tmp/
+.cache/

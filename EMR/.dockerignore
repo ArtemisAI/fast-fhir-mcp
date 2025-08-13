@@ -1,0 +1,66 @@
+# Dependencies
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Next.js build output
+.next
+out
+build
+
+# Environment files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Testing
+coverage
+.nyc_output
+
+# Misc
+.DS_Store
+*.pem
+.vscode
+.idea
+
+# Project-specific ignores
+/Tasks/
+/instructions/
+*.log
+
+# Healthcare/PHI data (never include in containers)
+/data/
+/patient-data/
+/medical-records/
+/test-data/patients/
+*.phi
+*.patient
+
+# Temporary files
+/temp/
+/tmp/
+.cache/
+
+# Git
+.git
+.gitignore
+README.md
+DEPLOYMENT.md
+
+# Development tools
+.prettierrc
+.eslintrc.json
+jest.config.js
+playwright.config.ts
+
+# Source maps and build artifacts
+*.map
+*.tsbuildinfo
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
