@@ -94,9 +94,8 @@ Thumbs.db
 /tmp/
 .cache/
 
-# Scripts (local automation)
-# Scripts (allow test files)
-/.scripts/
-!/.scripts/test/
-!/.scripts/test-*.ps1
-!/.scripts/usage.ps1
+# Scripts folder (internal automation - not for repository)
+.scripts/
+
+# GitHub setup instructions (internal use - not for repository)
+.githubinstruct/
