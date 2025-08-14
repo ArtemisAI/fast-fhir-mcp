@@ -94,8 +94,5 @@ Thumbs.db
 /tmp/
 .cache/
 
-# Scripts folder (internal automation - not for repository)
-.scripts/
-
-# GitHub setup instructions (internal use - not for repository)
-.githubinstruct/
+# Scripts (local automation)
+/.scripts/

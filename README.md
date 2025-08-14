@@ -1,9 +1,4 @@
 # FHIR-MCP Integration Framework
-
-**⚠️ STATUS: Development Paused - Critical Issues**  
-**PROGRESS**: 1/114 EMR files uploaded - PowerShell script syntax errors**  
-**DOCUMENTATION**: See `/issues/` and `PROJECT_HANDOVER.md` for details**  
-
 A comprehensive healthcare integration project transforming a legacy EMR system into a FHIR-compliant platform using the Model Context Protocol (MCP) for AI-powered healthcare workflows.
 
 ## 🏥 Project Overview
@@ -18,7 +13,10 @@ This project modernizes the CarePulse EMR system by integrating FHIR R4 standard
 ## 📋 Project Structure
 ```
 fhir-mcp/
-├── EMR/                    # Legacy CarePulse EMR application
+├── .scripts/               # Automation scripts for gradual deployment
+│   ├── gradual-commit-v4.ps1  # Main upload script (needs debugging)
+│   └── commit-state.json      # Generated: progress tracking
+├── EMR/                    # Legacy CarePulse EMR application (114 files)
 │   ├── app/               # Next.js application pages and routing
 │   ├── components/        # React components and forms
 │   ├── lib/              # Utilities, validation, and backend actions
@@ -27,6 +25,12 @@ fhir-mcp/
 ├── docs/                   # Private project documentation
 │   ├── EMR/               # EMR-specific documentation
 │   └── gemini_DeepResearch/ # Research insights and analysis
+├── issues/                 # Issue tracking and debugging
+│   ├── git-working-tree-issues.md  # Primary blocker analysis
+│   ├── testing-results.md          # Test history and logs
+│   └── powershell-script-errors.md # Historical issues
+├── EXECUTION_GUIDE.md      # How to run automation scripts
+├── PROJECT_HANDOVER.md     # Complete handover documentation
 ├── ROADMAP.md             # Public development roadmap
 └── README.md              # This file
 ```
@@ -52,6 +56,25 @@ npm run dev          # Start development server
 npm test            # Run test suite
 npm run test:e2e    # Run end-to-end tests
 ```
+
+## ⚠️ Current Status: Debugging Phase
+
+### Automated Upload Progress
+The project includes automation scripts to gradually upload 114 EMR files to this repository with controlled intervals:
+
+- **Script**: `.scripts/gradual-commit-v4.ps1`
+- **Status**: ⚠️ NEEDS DEBUGGING - Git working tree management issue
+- **Progress**: 0/114 files uploaded (blocked by git commit errors)
+- **Next Steps**: See `PROJECT_HANDOVER.md` for complete debugging guide
+
+### For Developers Taking Over
+1. **Read First**: `PROJECT_HANDOVER.md` - Complete project status
+2. **Understand Issues**: `issues/git-working-tree-issues.md` - Primary blocker
+3. **Execution Guide**: `EXECUTION_GUIDE.md` - How to run scripts
+4. **Test Results**: `issues/testing-results.md` - What's been tested
+
+### Quick Debug Summary
+The gradual commit script fails on the first file due to git working tree not being clean. The script needs enhanced error handling to manage existing modifications before committing EMR files individually.
 
 ## 🏗️ Architecture Evolution
 Transforming from legacy architecture to modern FHIR-compliant system:
