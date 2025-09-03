@@ -41,11 +41,11 @@ npm run dev
 ```bash
 npm run build
 ```
-- **CRITICAL ISSUE**: Build fails due to Google Fonts network restrictions
-- Error: "Failed to fetch `Plus Jakarta Sans` from Google Fonts"
-- **NEVER CANCEL**: Even failed builds take 26-45 seconds. Set timeout to 90+ seconds.
-- **Workaround**: Temporarily comment out Google Fonts import in `app/layout.tsx` if build is needed
-- Also has TypeScript errors in `AppointmentForm.tsx` related to missing `timeZone` property
+- Builds successfully with system fonts instead of Google Fonts
+- Build completes in ~45 seconds with success message "✓ Compiled successfully"
+- **NEVER CANCEL**: Set timeout to 90+ seconds for safe completion
+- May show Sentry warnings (non-blocking) and Playwright config errors if test dependencies aren't installed
+- Also may show ESLint warnings in `FileUploader.tsx` and `PasskeyModal.tsx` (non-blocking)
 
 #### Linting
 ```bash
@@ -120,20 +120,18 @@ cp .env.example .env.local
 ## Known Issues and Limitations
 
 ### Network Restrictions
-- **Google Fonts**: Cannot fetch fonts from fonts.googleapis.com
 - **Playwright Browsers**: Download may fail from cdn.playwright.dev
-- **Build Failures**: Production builds fail due to font loading
+- **External Services**: Various external services may be blocked in restricted environments
 
 ### Code Issues
-- TypeScript error in `AppointmentForm.tsx` - missing `timeZone` property
-- ESLint warnings in form components (non-blocking)
-- Jest tests are disabled/commented out pending configuration
+- ESLint warnings in `FileUploader.tsx` and `PasskeyModal.tsx` (non-blocking)
 - Sentry warnings due to missing auth tokens (non-blocking)
+- Playwright config errors if test dependencies aren't installed
 
 ### Workarounds
-1. **For builds**: Temporarily disable Google Fonts import in `app/layout.tsx`
-2. **For development**: Use `npm run dev` instead of production builds
-3. **For testing**: Use manual testing workflows until test framework is configured
+1. **For development**: Use `npm run dev` for active development
+2. **For testing**: Use manual testing workflows until test framework is configured
+3. **For deployment**: Production builds now work reliably with system fonts
 
 ## Technology Stack
 
@@ -228,7 +226,7 @@ curl http://localhost:3000   # Test server health
 - **npm install**: ~70 seconds (NEVER CANCEL, timeout: 120s+)
 - **Development server**: ~6 seconds startup
 - **Linting**: ~3 seconds  
-- **Failed builds**: ~26-45 seconds (NEVER CANCEL, timeout: 90s+)
+- **Production builds**: ~45 seconds (builds successfully, timeout: 90s+)
 - **Network operations**: May timeout due to restrictions
 
 Remember: This is a healthcare application handling sensitive data. Always prioritize security, validation, and compliance when making changes.

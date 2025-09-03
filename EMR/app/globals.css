@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ========================================== FONT CONFIGURATION */
+:root {
+  --font-sans: "Inter", "Segoe UI", "Roboto", "Arial", sans-serif;
+}
+
 /* ========================================== TAILWIND STYLES */
 @layer base {
   /* Remove scrollbar */
