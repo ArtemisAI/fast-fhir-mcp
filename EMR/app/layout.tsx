@@ -1,15 +1,13 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Plus_Jakarta_Sans as FontSans } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 import { cn } from "@/lib/utils";
 
-const fontSans = FontSans({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+// Use system fonts to avoid network dependency issues
+const fontSans = {
   variable: "--font-sans",
-});
+};
 
 export const metadata: Metadata = {
   title: "CarePulse",
