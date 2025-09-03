@@ -5,8 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FHIR-MCP Integration Framework</title>
     <meta name="description" content="A comprehensive healthcare integration project transforming legacy EMR systems into FHIR-compliant platforms using the Model Context Protocol (MCP) for AI-powered healthcare workflows.">
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- SEO and Open Graph Meta Tags -->
+    <meta name="keywords" content="FHIR, MCP, healthcare, EMR, AI, integration, HIPAA, interoperability">
+    <meta name="author" content="ArtemisAI">
+    <meta property="og:title" content="FHIR-MCP Integration Framework">
+    <meta property="og:description" content="Transforming legacy EMR systems into FHIR-compliant platforms using AI-powered healthcare workflows">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://artemisai.github.io/fast-fhir-mcp/">
+    <meta property="og:image" content="https://artemisai.github.io/fast-fhir-mcp/assets/images/architecture-diagram.svg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="FHIR-MCP Integration Framework">
+    <meta name="twitter:description" content="Transforming legacy EMR systems into FHIR-compliant platforms using AI-powered healthcare workflows">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="./assets/css/tailwind-minimal.css">
+    <link rel="stylesheet" href="./assets/css/enhanced.css">
     <style>
         .gradient-bg {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -24,49 +41,84 @@
         }
     </style>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50" data-theme="light">
     <!-- Navigation -->
     <nav class="bg-white shadow-lg fixed w-full z-50">
         <div class="max-w-7xl mx-auto px-4">
             <div class="flex justify-between items-center py-4">
                 <div class="flex items-center space-x-4">
-                    <i class="fas fa-heartbeat text-blue-600 text-2xl"></i>
+                    <span class="text-2xl">🏥</span>
                     <h1 class="text-xl font-bold text-gray-800">FHIR-MCP Framework</h1>
                 </div>
-                <div class="hidden md:flex space-x-6">
+                <div class="hidden md:flex items-center space-x-6">
                     <a href="#overview" class="text-gray-600 hover:text-blue-600 transition">Overview</a>
                     <a href="#features" class="text-gray-600 hover:text-blue-600 transition">Features</a>
                     <a href="#architecture" class="text-gray-600 hover:text-blue-600 transition">Architecture</a>
+                    <a href="#github-stats" class="text-gray-600 hover:text-blue-600 transition">Stats</a>
                     <a href="#documentation" class="text-gray-600 hover:text-blue-600 transition">Documentation</a>
-                    <a href="https://github.com/ArtemisAI/fast-fhir-mcp" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition">
-                        <i class="fab fa-github mr-2"></i>GitHub
+                    <button id="theme-toggle" class="theme-toggle" title="Toggle theme">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                    <a href="https://github.com/ArtemisAI/fast-fhir-mcp" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition focus:ring-2">
+                        ⚡ GitHub
                     </a>
                 </div>
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-600">
+                    ☰
+                </button>
+            </div>
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="hidden md:hidden mobile-menu">
+                <a href="#overview" class="block py-2 text-gray-600">Overview</a>
+                <a href="#features" class="block py-2 text-gray-600">Features</a>
+                <a href="#architecture" class="block py-2 text-gray-600">Architecture</a>
+                <a href="#github-stats" class="block py-2 text-gray-600">Stats</a>
+                <a href="#documentation" class="block py-2 text-gray-600">Documentation</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="gradient-bg text-white pt-24 pb-16">
+    <section class="gradient-hero text-white pt-24 pb-16 section-animate">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <h1 class="text-5xl font-bold mb-6">FHIR-MCP Integration Framework</h1>
-            <p class="text-xl mb-8 max-w-3xl mx-auto">
+            <h1 class="text-5xl font-bold mb-6 hero-title animate-in">FHIR-MCP Integration Framework</h1>
+            <p class="text-xl mb-8 max-w-3xl mx-auto animate-in">
                 Transforming legacy EMR systems into FHIR-compliant platforms using the Model Context Protocol (MCP) 
                 for AI-powered healthcare workflows while maintaining HIPAA compliance and data security.
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://github.com/ArtemisAI/fast-fhir-mcp" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition">
-                    <i class="fab fa-github mr-2"></i>View on GitHub
+            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-in">
+                <a href="https://github.com/ArtemisAI/fast-fhir-mcp" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition focus:ring-2">
+                    ⚡ View on GitHub
                 </a>
-                <a href="#documentation" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition">
-                    <i class="fas fa-book mr-2"></i>Documentation
+                <a href="#documentation" class="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition focus:ring-2">
+                    📖 Documentation
                 </a>
+            </div>
+            
+            <!-- GitHub Stats Preview -->
+            <div class="github-stats mt-12">
+                <div class="stat-item">
+                    <span id="github-stars" class="stat-number">12</span>
+                    <span class="stat-label">Stars</span>
+                </div>
+                <div class="stat-item">
+                    <span id="github-forks" class="stat-number">3</span>
+                    <span class="stat-label">Forks</span>
+                </div>
+                <div class="stat-item">
+                    <span id="github-commits" class="stat-number">150+</span>
+                    <span class="stat-label">Commits</span>
+                </div>
+                <div class="stat-item">
+                    <span id="github-contributors" class="stat-number">5</span>
+                    <span class="stat-label">Contributors</span>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Overview Section -->
-    <section id="overview" class="py-16 bg-white">
+    <section id="overview" class="py-16 bg-white section-animate">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Project Overview</h2>
@@ -77,29 +129,41 @@
             </div>
             
             <div class="grid md:grid-cols-3 gap-8">
-                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 p-6 rounded-xl">
-                    <i class="fas fa-hospital tech-icon text-blue-600"></i>
+                <div class="enhanced-card gradient-card-blue">
+                    <div class="interactive-icon text-blue-600 text-5xl mb-4">🏥</div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">Legacy EMR System</h3>
                     <p class="text-gray-600">Next.js-based CarePulse application with comprehensive patient management capabilities and modern UI/UX.</p>
+                    <div class="progress-container mt-4">
+                        <div class="progress-bar" data-progress="85"></div>
+                    </div>
+                    <small class="text-gray-500">Implementation: 85% Complete</small>
                 </div>
                 
-                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 p-6 rounded-xl">
-                    <i class="fas fa-exchange-alt tech-icon text-green-600"></i>
+                <div class="enhanced-card gradient-card-green">
+                    <div class="interactive-icon text-green-600 text-5xl mb-4">⇄</div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">FHIR Integration</h3>
                     <p class="text-gray-600">Microsoft FHIR Server implementation for R4 compliance with SQL persistence and healthcare interoperability.</p>
+                    <div class="progress-container mt-4">
+                        <div class="progress-bar" data-progress="70"></div>
+                    </div>
+                    <small class="text-gray-500">Implementation: 70% Complete</small>
                 </div>
                 
-                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 p-6 rounded-xl">
-                    <i class="fas fa-robot tech-icon text-purple-600"></i>
+                <div class="enhanced-card gradient-card-purple">
+                    <div class="interactive-icon text-purple-600 text-5xl mb-4">🤖</div>
                     <h3 class="text-xl font-semibold mb-3 text-gray-800">MCP Gateway</h3>
                     <p class="text-gray-600">Helios-based connector enabling seamless AI-EMR communication for intelligent healthcare workflows.</p>
+                    <div class="progress-container mt-4">
+                        <div class="progress-bar" data-progress="60"></div>
+                    </div>
+                    <small class="text-gray-500">Implementation: 60% Complete</small>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Features Section -->
-    <section id="features" class="py-16 bg-gray-50">
+    <section id="features" class="py-16 bg-gray-50 section-animate">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Key Features</h2>
@@ -107,68 +171,206 @@
             </div>
             
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                    <i class="fas fa-shield-alt text-2xl text-blue-600 mb-4"></i>
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-blue-600 text-3xl mb-4">🛡</div>
                     <h4 class="font-semibold mb-2">HIPAA Compliance</h4>
-                    <p class="text-gray-600 text-sm">Full healthcare data security and privacy compliance</p>
+                    <p class="text-gray-600 text-sm">Full healthcare data security and privacy compliance with end-to-end encryption</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                    <i class="fas fa-code-branch text-2xl text-green-600 mb-4"></i>
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-green-600 text-3xl mb-4">⚡</div>
                     <h4 class="font-semibold mb-2">FHIR R4 Standards</h4>
-                    <p class="text-gray-600 text-sm">Complete implementation of FHIR R4 interoperability standards</p>
+                    <p class="text-gray-600 text-sm">Complete implementation of FHIR R4 interoperability standards and REST APIs</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                    <i class="fas fa-brain text-2xl text-purple-600 mb-4"></i>
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-purple-600 text-3xl mb-4">🧠</div>
                     <h4 class="font-semibold mb-2">AI Integration</h4>
-                    <p class="text-gray-600 text-sm">Advanced AI-powered healthcare workflow automation</p>
+                    <p class="text-gray-600 text-sm">Advanced AI-powered healthcare workflow automation and clinical decision support</p>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md card-hover">
-                    <i class="fas fa-vial text-2xl text-red-600 mb-4"></i>
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-red-600 text-3xl mb-4">🧪</div>
                     <h4 class="font-semibold mb-2">Testing Framework</h4>
-                    <p class="text-gray-600 text-sm">Comprehensive test suite for healthcare data integrity</p>
+                    <p class="text-gray-600 text-sm">Comprehensive test suite for healthcare data integrity and compliance validation</p>
+                </div>
+                
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-orange-600 text-3xl mb-4">🔗</div>
+                    <h4 class="font-semibold mb-2">MCP Protocol</h4>
+                    <p class="text-gray-600 text-sm">Model Context Protocol implementation for seamless AI-EMR communication</p>
+                </div>
+                
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-indigo-600 text-3xl mb-4">📊</div>
+                    <h4 class="font-semibold mb-2">Real-time Analytics</h4>
+                    <p class="text-gray-600 text-sm">Live dashboard with patient metrics, system performance, and compliance monitoring</p>
+                </div>
+                
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-pink-600 text-3xl mb-4">🔄</div>
+                    <h4 class="font-semibold mb-2">Data Migration</h4>
+                    <p class="text-gray-600 text-sm">Automated legacy data transformation and migration to FHIR-compliant format</p>
+                </div>
+                
+                <div class="enhanced-card">
+                    <div class="interactive-icon text-teal-600 text-3xl mb-4">⚙</div>
+                    <h4 class="font-semibold mb-2">API Gateway</h4>
+                    <p class="text-gray-600 text-sm">Robust API management with authentication, rate limiting, and monitoring</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Architecture Section -->
-    <section id="architecture" class="py-16 bg-white">
+    <section id="architecture" class="py-16 bg-white section-animate">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Architecture Evolution</h2>
                 <p class="text-lg text-gray-600">From legacy architecture to modern FHIR-compliant system</p>
             </div>
             
+            <!-- Interactive Architecture Diagram -->
+            <div class="architecture-diagram mb-12">
+                <img src="./assets/images/architecture-diagram.svg" alt="FHIR-MCP Integration Architecture" class="w-full max-w-4xl mx-auto">
+            </div>
+            
             <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
+                <div class="enhanced-card gradient-card-orange">
                     <h3 class="text-2xl font-semibold mb-6 text-gray-800">Current State (Legacy)</h3>
-                    <div class="bg-gray-100 p-6 rounded-lg">
-                        <div class="flex items-center justify-between mb-4">
-                            <div class="bg-blue-500 text-white px-4 py-2 rounded">Next.js EMR UI</div>
-                            <i class="fas fa-arrows-alt-h text-gray-400"></i>
-                            <div class="bg-green-500 text-white px-4 py-2 rounded">Appwrite BaaS</div>
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <div class="diagram-node" style="background: #ef4444;">Next.js EMR UI</div>
+                            <span class="diagram-arrow">→</span>
+                            <div class="diagram-node" style="background: #10b981;">Appwrite BaaS</div>
                         </div>
-                        <p class="text-sm text-gray-600">Patient Forms connected to Legacy Backend</p>
+                        <p class="text-sm text-gray-600 mt-4">Traditional patient forms connected to proprietary backend with limited interoperability</p>
+                        <div class="tech-stack-grid">
+                            <div class="tech-item">
+                                <span class="icon">⚛</span>
+                                <div>Next.js 14</div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="icon">🎨</span>
+                                <div>Tailwind CSS</div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="icon">🔧</span>
+                                <div>Appwrite</div>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 
-                <div>
+                <div class="enhanced-card gradient-card-blue">
                     <h3 class="text-2xl font-semibold mb-6 text-gray-800">Target State (FHIR-Compliant)</h3>
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 p-6 rounded-lg">
-                        <div class="space-y-4">
+                    <div class="space-y-4">
+                        <div class="flex flex-col space-y-2">
                             <div class="flex items-center justify-between">
-                                <div class="bg-blue-600 text-white px-3 py-2 rounded text-sm">Next.js EMR</div>
-                                <i class="fas fa-arrow-right text-gray-400"></i>
-                                <div class="bg-purple-600 text-white px-3 py-2 rounded text-sm">MCP Gateway</div>
-                                <i class="fas fa-arrow-right text-gray-400"></i>
-                                <div class="bg-green-600 text-white px-3 py-2 rounded text-sm">FHIR API</div>
+                                <div class="diagram-node" style="background: #2563eb;">Next.js EMR</div>
+                                <span class="diagram-arrow">→</span>
+                                <div class="diagram-node" style="background: #8b5cf6;">MCP Gateway</div>
+                                <span class="diagram-arrow">→</span>
+                                <div class="diagram-node" style="background: #10b981;">FHIR API</div>
                             </div>
                             <div class="flex justify-center space-x-8">
-                                <div class="bg-orange-500 text-white px-3 py-2 rounded text-sm">AI Services</div>
-                                <div class="bg-gray-600 text-white px-3 py-2 rounded text-sm">SQL Database</div>
+                                <div class="diagram-node" style="background: #f59e0b;">AI Services</div>
+                                <div class="diagram-node" style="background: #6b7280;">SQL Database</div>
+                            </div>
+                        </div>
+                        <p class="text-sm text-gray-600 mt-4">Modern microservices architecture with full FHIR R4 compliance and AI integration</p>
+                        <div class="tech-stack-grid">
+                            <div class="tech-item">
+                                <span class="icon">🏥</span>
+                                <div>FHIR R4</div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="icon">🤖</span>
+                                <div>MCP Protocol</div>
+                            </div>
+                            <div class="tech-item">
+                                <span class="icon">🛡</span>
+                                <div>HIPAA Security</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Stats Section -->
+    <section id="github-stats" class="py-16 bg-gray-50 section-animate">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Project Statistics</h2>
+                <p class="text-lg text-gray-600">Real-time metrics from our GitHub repository</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
+                <div class="enhanced-card text-center">
+                    <div class="text-4xl mb-2">⭐</div>
+                    <div class="stat-number" id="github-stars">12</div>
+                    <div class="stat-label">GitHub Stars</div>
+                </div>
+                <div class="enhanced-card text-center">
+                    <div class="text-4xl mb-2">🍴</div>
+                    <div class="stat-number" id="github-forks">3</div>
+                    <div class="stat-label">Forks</div>
+                </div>
+                <div class="enhanced-card text-center">
+                    <div class="text-4xl mb-2">📝</div>
+                    <div class="stat-number" id="github-commits">150+</div>
+                    <div class="stat-label">Commits</div>
+                </div>
+                <div class="enhanced-card text-center">
+                    <div class="text-4xl mb-2">👥</div>
+                    <div class="stat-number" id="github-contributors">5</div>
+                    <div class="stat-label">Contributors</div>
+                </div>
+            </div>
+            
+            <!-- Project Timeline -->
+            <div class="enhanced-card">
+                <h3 class="text-2xl font-semibold mb-6 text-center">Development Timeline</h3>
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center text-white text-sm">✓</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold">Phase 1: Legacy EMR Setup</h4>
+                            <p class="text-gray-600 text-sm">Next.js CarePulse application with Appwrite backend</p>
+                            <div class="progress-container w-full">
+                                <div class="progress-bar" data-progress="100"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center text-white text-sm">2</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold">Phase 2: FHIR Server Integration</h4>
+                            <p class="text-gray-600 text-sm">Microsoft FHIR Server deployment and configuration</p>
+                            <div class="progress-container w-full">
+                                <div class="progress-bar" data-progress="70"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center text-white text-sm">3</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold">Phase 3: MCP Gateway Development</h4>
+                            <p class="text-gray-600 text-sm">Helios-based connector for AI-EMR communication</p>
+                            <div class="progress-container w-full">
+                                <div class="progress-bar" data-progress="60"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-orange-400 rounded-full flex items-center justify-center text-white text-sm">4</div>
+                        <div class="flex-1">
+                            <h4 class="font-semibold">Phase 4: AI Services Integration</h4>
+                            <p class="text-gray-600 text-sm">Clinical decision support and workflow automation</p>
+                            <div class="progress-container w-full">
+                                <div class="progress-bar" data-progress="30"></div>
                             </div>
                         </div>
                     </div>
@@ -178,30 +380,83 @@
     </section>
 
     <!-- Technology Stack Section -->
-    <section class="py-16 bg-gray-50">
+    <section class="py-16 bg-white section-animate">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Technology Stack</h2>
+                <p class="text-lg text-gray-600">Modern technologies powering healthcare innovation</p>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Current EMR Stack</h3>
-                    <div class="space-y-2 text-gray-600">
-                        <div class="flex items-center"><i class="fab fa-react text-blue-500 mr-2"></i> Next.js 14, TypeScript, Tailwind CSS</div>
-                        <div class="flex items-center"><i class="fas fa-check-circle text-green-500 mr-2"></i> React Hook Form, Zod validation</div>
-                        <div class="flex items-center"><i class="fas fa-server text-purple-500 mr-2"></i> Appwrite BaaS (legacy)</div>
-                        <div class="flex items-center"><i class="fas fa-flask text-orange-500 mr-2"></i> Jest, React Testing Library, Playwright</div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="enhanced-card">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 text-center">Current EMR Stack</h3>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">
+                            <span class="icon text-blue-500">⚛</span>
+                            <div class="font-semibold">Next.js 14</div>
+                            <small class="text-gray-500">React Framework</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-blue-600">📘</span>
+                            <div class="font-semibold">TypeScript</div>
+                            <small class="text-gray-500">Type Safety</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-teal-500">🎨</span>
+                            <div class="font-semibold">Tailwind CSS</div>
+                            <small class="text-gray-500">Utility-First CSS</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-green-500">✓</span>
+                            <div class="font-semibold">React Hook Form</div>
+                            <small class="text-gray-500">Form Validation</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-purple-500">🔧</span>
+                            <div class="font-semibold">Appwrite</div>
+                            <small class="text-gray-500">Backend as a Service</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-orange-500">🧪</span>
+                            <div class="font-semibold">Jest & Playwright</div>
+                            <small class="text-gray-500">Testing Framework</small>
+                        </div>
                     </div>
                 </div>
                 
-                <div class="bg-white p-6 rounded-lg shadow-md">
-                    <h3 class="text-xl font-semibold mb-4 text-gray-800">Target FHIR Stack</h3>
-                    <div class="space-y-2 text-gray-600">
-                        <div class="flex items-center"><i class="fas fa-hospital text-blue-500 mr-2"></i> Microsoft FHIR Server</div>
-                        <div class="flex items-center"><i class="fas fa-link text-green-500 mr-2"></i> Helios MCP Framework</div>
-                        <div class="flex items-center"><i class="fas fa-shield-alt text-purple-500 mr-2"></i> FHIR R4, SMART on FHIR OAuth2</div>
-                        <div class="flex items-center"><i class="fas fa-lock text-red-500 mr-2"></i> HIPAA compliance, encryption</div>
+                <div class="enhanced-card">
+                    <h3 class="text-xl font-semibold mb-6 text-gray-800 text-center">Target FHIR Stack</h3>
+                    <div class="tech-stack-grid">
+                        <div class="tech-item">
+                            <span class="icon text-blue-500">🏥</span>
+                            <div class="font-semibold">Microsoft FHIR</div>
+                            <small class="text-gray-500">FHIR R4 Server</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-green-500">🔗</span>
+                            <div class="font-semibold">Helios MCP</div>
+                            <small class="text-gray-500">Protocol Framework</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-purple-500">🛡</span>
+                            <div class="font-semibold">SMART on FHIR</div>
+                            <small class="text-gray-500">OAuth2 Security</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-red-500">🔒</span>
+                            <div class="font-semibold">HIPAA Compliance</div>
+                            <small class="text-gray-500">Data Encryption</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-yellow-500">🤖</span>
+                            <div class="font-semibold">AI Integration</div>
+                            <small class="text-gray-500">Clinical AI</small>
+                        </div>
+                        <div class="tech-item">
+                            <span class="icon text-gray-600">🗄</span>
+                            <div class="font-semibold">SQL Database</div>
+                            <small class="text-gray-500">Data Persistence</small>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -209,49 +464,78 @@
     </section>
 
     <!-- Documentation Section -->
-    <section id="documentation" class="py-16 bg-white">
+    <section id="documentation" class="py-16 bg-gray-50 section-animate">
         <div class="max-w-7xl mx-auto px-4">
             <div class="text-center mb-12">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">Documentation</h2>
-                <p class="text-lg text-gray-600">Comprehensive guides and resources</p>
+                <p class="text-lg text-gray-600">Comprehensive guides and resources for developers</p>
             </div>
             
             <div class="grid md:grid-cols-3 gap-6">
-                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/EXECUTION_GUIDE.md" class="block bg-blue-50 p-6 rounded-lg card-hover">
-                    <i class="fas fa-play-circle text-2xl text-blue-600 mb-4"></i>
+                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/EXECUTION_GUIDE.md" class="enhanced-card gradient-card-blue hover:scale-105 transition-transform">
+                    <div class="interactive-icon text-blue-600 text-4xl mb-4">▶</div>
                     <h4 class="font-semibold mb-2">Execution Guide</h4>
-                    <p class="text-gray-600 text-sm">Step-by-step instructions for running the automation scripts</p>
+                    <p class="text-gray-600 text-sm mb-4">Step-by-step instructions for running the automation scripts and setting up the development environment</p>
+                    <div class="text-blue-600 text-sm font-medium">Read Guide →</div>
                 </a>
                 
-                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/PROJECT_HANDOVER.md" class="block bg-green-50 p-6 rounded-lg card-hover">
-                    <i class="fas fa-handshake text-2xl text-green-600 mb-4"></i>
+                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/PROJECT_HANDOVER.md" class="enhanced-card gradient-card-green hover:scale-105 transition-transform">
+                    <div class="interactive-icon text-green-600 text-4xl mb-4">🤝</div>
                     <h4 class="font-semibold mb-2">Project Handover</h4>
-                    <p class="text-gray-600 text-sm">Complete project status and technical handover documentation</p>
+                    <p class="text-gray-600 text-sm mb-4">Complete project status and technical handover documentation with implementation details</p>
+                    <div class="text-green-600 text-sm font-medium">View Details →</div>
                 </a>
                 
-                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/ROADMAP.md" class="block bg-purple-50 p-6 rounded-lg card-hover">
-                    <i class="fas fa-road text-2xl text-purple-600 mb-4"></i>
+                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/ROADMAP.md" class="enhanced-card gradient-card-purple hover:scale-105 transition-transform">
+                    <div class="interactive-icon text-purple-600 text-4xl mb-4">🛣</div>
                     <h4 class="font-semibold mb-2">Development Roadmap</h4>
-                    <p class="text-gray-600 text-sm">Public development roadmap and project milestones</p>
+                    <p class="text-gray-600 text-sm mb-4">Public development roadmap and project milestones with timeline and priorities</p>
+                    <div class="text-purple-600 text-sm font-medium">See Roadmap →</div>
                 </a>
                 
-                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/tree/main/issues" class="block bg-orange-50 p-6 rounded-lg card-hover">
-                    <i class="fas fa-bug text-2xl text-orange-600 mb-4"></i>
+                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/tree/main/issues" class="enhanced-card gradient-card-orange hover:scale-105 transition-transform">
+                    <div class="interactive-icon text-orange-600 text-4xl mb-4">🐛</div>
                     <h4 class="font-semibold mb-2">Issue Tracking</h4>
-                    <p class="text-gray-600 text-sm">Detailed issue analysis and debugging documentation</p>
+                    <p class="text-gray-600 text-sm mb-4">Detailed issue analysis and debugging documentation with solutions and workarounds</p>
+                    <div class="text-orange-600 text-sm font-medium">Browse Issues →</div>
                 </a>
                 
-                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/AI_AGENT_TAKEOVER_PROMPTS.md" class="block bg-red-50 p-6 rounded-lg card-hover">
-                    <i class="fas fa-robot text-2xl text-red-600 mb-4"></i>
+                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/AI_AGENT_TAKEOVER_PROMPTS.md" class="enhanced-card gradient-card-pink hover:scale-105 transition-transform">
+                    <div class="interactive-icon text-red-600 text-4xl mb-4">🤖</div>
                     <h4 class="font-semibold mb-2">AI Agent Prompts</h4>
-                    <p class="text-gray-600 text-sm">Comprehensive prompts for AI agent task handover</p>
+                    <p class="text-gray-600 text-sm mb-4">Comprehensive prompts for AI agent task handover and automation workflows</p>
+                    <div class="text-red-600 text-sm font-medium">View Prompts →</div>
                 </a>
                 
-                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/tree/main/EMR" class="block bg-indigo-50 p-6 rounded-lg card-hover">
-                    <i class="fas fa-code text-2xl text-indigo-600 mb-4"></i>
+                <a href="https://github.com/ArtemisAI/fast-fhir-mcp/tree/main/EMR" class="enhanced-card gradient-card-indigo hover:scale-105 transition-transform">
+                    <div class="interactive-icon text-indigo-600 text-4xl mb-4">💻</div>
                     <h4 class="font-semibold mb-2">EMR Source Code</h4>
-                    <p class="text-gray-600 text-sm">Complete CarePulse EMR application source code</p>
+                    <p class="text-gray-600 text-sm mb-4">Complete CarePulse EMR application source code with React components and utilities</p>
+                    <div class="text-indigo-600 text-sm font-medium">Explore Code →</div>
                 </a>
+            </div>
+            
+            <!-- Quick Links -->
+            <div class="mt-12 enhanced-card">
+                <h3 class="text-xl font-semibold mb-6 text-center">Quick Links</h3>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <a href="https://github.com/ArtemisAI/fast-fhir-mcp" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition">
+                        <span>⚡</span>
+                        <span>GitHub Repo</span>
+                    </a>
+                    <a href="https://hl7.org/fhir/" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition">
+                        <span>🏥</span>
+                        <span>FHIR R4 Docs</span>
+                    </a>
+                    <a href="https://www.hhs.gov/hipaa/index.html" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition">
+                        <span>🛡</span>
+                        <span>HIPAA Guidelines</span>
+                    </a>
+                    <a href="https://smarthealthit.org/" class="flex items-center space-x-2 text-gray-600 hover:text-blue-600 transition">
+                        <span>🔒</span>
+                        <span>SMART on FHIR</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -262,48 +546,59 @@
             <div class="grid md:grid-cols-4 gap-8">
                 <div>
                     <div class="flex items-center space-x-2 mb-4">
-                        <i class="fas fa-heartbeat text-blue-400 text-2xl"></i>
+                        <span class="text-blue-400 text-2xl">🏥</span>
                         <h3 class="text-xl font-bold">FHIR-MCP</h3>
                     </div>
-                    <p class="text-gray-400">Transforming healthcare technology through modern integration standards.</p>
+                    <p class="text-gray-400">Transforming healthcare technology through modern integration standards and AI-powered workflows.</p>
+                    <div class="mt-4 space-y-2">
+                        <div class="text-sm text-gray-400">🌟 Modern Healthcare Integration</div>
+                        <div class="text-sm text-gray-400">🛡 HIPAA Compliant</div>
+                        <div class="text-sm text-gray-400">🤖 AI-Powered</div>
+                    </div>
                 </div>
                 
                 <div>
                     <h4 class="font-semibold mb-4">Project</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp" class="hover:text-white transition">GitHub Repository</a></li>
-                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/issues" class="hover:text-white transition">Issues</a></li>
-                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/LICENSE" class="hover:text-white transition">License</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp" class="hover:text-white transition">⚡ GitHub Repository</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/issues" class="hover:text-white transition">🐛 Issues</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/LICENSE" class="hover:text-white transition">📄 License</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/releases" class="hover:text-white transition">🚀 Releases</a></li>
                     </ul>
                 </div>
                 
                 <div>
                     <h4 class="font-semibold mb-4">Documentation</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/README.md" class="hover:text-white transition">Getting Started</a></li>
-                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/EXECUTION_GUIDE.md" class="hover:text-white transition">Execution Guide</a></li>
-                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/PROJECT_HANDOVER.md" class="hover:text-white transition">Project Handover</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/README.md" class="hover:text-white transition">📚 Getting Started</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/EXECUTION_GUIDE.md" class="hover:text-white transition">▶ Execution Guide</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/PROJECT_HANDOVER.md" class="hover:text-white transition">🤝 Project Handover</a></li>
+                        <li><a href="https://github.com/ArtemisAI/fast-fhir-mcp/blob/main/ROADMAP.md" class="hover:text-white transition">🛣 Roadmap</a></li>
                     </ul>
                 </div>
                 
                 <div>
-                    <h4 class="font-semibold mb-4">Standards</h4>
+                    <h4 class="font-semibold mb-4">Standards & Compliance</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><a href="https://hl7.org/fhir/" class="hover:text-white transition">FHIR R4</a></li>
-                        <li><a href="https://www.hhs.gov/hipaa/index.html" class="hover:text-white transition">HIPAA Compliance</a></li>
-                        <li><a href="https://smarthealthit.org/" class="hover:text-white transition">SMART on FHIR</a></li>
+                        <li><a href="https://hl7.org/fhir/" class="hover:text-white transition">🏥 FHIR R4</a></li>
+                        <li><a href="https://www.hhs.gov/hipaa/index.html" class="hover:text-white transition">🛡 HIPAA Compliance</a></li>
+                        <li><a href="https://smarthealthit.org/" class="hover:text-white transition">🔒 SMART on FHIR</a></li>
+                        <li><a href="https://www.hl7.org/" class="hover:text-white transition">⚕ HL7 Standards</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
                 <p>&copy; 2025 FHIR-MCP Integration Framework. Licensed under MIT License.</p>
+                <p class="mt-2 text-sm">Built with ❤️ for the healthcare community</p>
             </div>
         </div>
     </footer>
 
+    <!-- JavaScript -->
+    <script src="./assets/js/main.js"></script>
     <script>
-        // Smooth scrolling for navigation links
+        // Smooth scrolling for navigation links (fallback)
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
