@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" style="background: #f9fafb;">
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" font-family="sans-serif" font-size="20" font-weight="bold" fill="#1f2937">
+    FHIR-MCP Integration Architecture
+  </text>
+  
+  <!-- Legacy System (Top) -->
+  <g id="legacy-system">
+    <rect x="50" y="60" width="200" height="80" rx="10" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <text x="150" y="85" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">
+      Legacy EMR System
+    </text>
+    <text x="150" y="105" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      Next.js + Appwrite
+    </text>
+    <text x="150" y="125" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      Non-FHIR Compliant
+    </text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <g id="arrow1">
+    <path d="M250 100 L320 100" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="285" y="95" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6b7280">Transform</text>
+  </g>
+  
+  <!-- MCP Gateway (Center) -->
+  <g id="mcp-gateway">
+    <rect x="330" y="60" width="140" height="80" rx="10" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <text x="400" y="85" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">
+      MCP Gateway
+    </text>
+    <text x="400" y="105" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      Helios Framework
+    </text>
+    <text x="400" y="125" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      AI Integration
+    </text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <g id="arrow2">
+    <path d="M470 100 L540 100" stroke="#6b7280" stroke-width="3" marker-end="url(#arrowhead)"/>
+    <text x="505" y="95" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6b7280">FHIR R4</text>
+  </g>
+  
+  <!-- FHIR Server (Right) -->
+  <g id="fhir-server">
+    <rect x="550" y="60" width="200" height="80" rx="10" fill="#10b981" stroke="#059669" stroke-width="2"/>
+    <text x="650" y="85" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">
+      FHIR Server
+    </text>
+    <text x="650" y="105" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      Microsoft FHIR
+    </text>
+    <text x="650" y="125" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      R4 Compliant
+    </text>
+  </g>
+  
+  <!-- AI Services (Bottom Left) -->
+  <g id="ai-services">
+    <rect x="150" y="200" width="160" height="80" rx="10" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="230" y="225" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">
+      AI Services
+    </text>
+    <text x="230" y="245" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      Clinical Decision
+    </text>
+    <text x="230" y="265" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      Support System
+    </text>
+  </g>
+  
+  <!-- SQL Database (Bottom Right) -->
+  <g id="sql-database">
+    <rect x="490" y="200" width="160" height="80" rx="10" fill="#6366f1" stroke="#4f46e5" stroke-width="2"/>
+    <text x="570" y="225" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="bold" fill="white">
+      SQL Database
+    </text>
+    <text x="570" y="245" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      Patient Records
+    </text>
+    <text x="570" y="265" text-anchor="middle" font-family="sans-serif" font-size="12" fill="white">
+      HIPAA Compliant
+    </text>
+  </g>
+  
+  <!-- Connecting arrows -->
+  <g id="connections">
+    <!-- MCP to AI -->
+    <path d="M400 140 L400 160 L230 160 L230 200" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- FHIR to Database -->
+    <path d="M650 140 L650 160 L570 160 L570 200" stroke="#6b7280" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+    
+    <!-- AI to Database bidirectional -->
+    <path d="M310 240 L490 240" stroke="#6b7280" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+  
+  <!-- Benefits section -->
+  <g id="benefits">
+    <text x="400" y="330" text-anchor="middle" font-family="sans-serif" font-size="16" font-weight="bold" fill="#1f2937">
+      Key Benefits
+    </text>
+    <text x="200" y="355" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#059669">
+      ✓ FHIR R4 Compliance
+    </text>
+    <text x="400" y="355" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#059669">
+      ✓ AI-Powered Workflows
+    </text>
+    <text x="600" y="355" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#059669">
+      ✓ HIPAA Security
+    </text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" 
+     refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Hover effects -->
+  <style>
+    <![CDATA[
+    g:hover rect {
+      filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
+    }
+    g {
+      cursor: pointer;
+    }
+    ]]>
+  </style>
+</svg>
